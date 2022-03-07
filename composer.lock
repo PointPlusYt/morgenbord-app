@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb99a7d03f988153c989c9cc3105b434",
+    "content-hash": "478c3a9bf221901f7c52a3a7aa2e88ac",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1678,6 +1678,47 @@
                 }
             ],
             "time": "2021-10-01T21:08:31+00:00"
+        },
+        {
+            "name": "morgenbord/core-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PointPlusYt/morgenbord-core-bundle.git",
+                "reference": "f44a03dceac979fdac115281e150c6bb6c1db4e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PointPlusYt/morgenbord-core-bundle/zipball/f44a03dceac979fdac115281e150c6bb6c1db4e8",
+                "reference": "f44a03dceac979fdac115281e150c6bb6c1db4e8",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "default-branch": true,
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "MorgenBord\\CoreBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Djyp Forest Fortin",
+                    "email": "point@plus.yt"
+                }
+            ],
+            "description": "Dummy Widget demo to help create your own widget for Morgenbord",
+            "support": {
+                "issues": "https://github.com/PointPlusYt/morgenbord-core-bundle/issues",
+                "source": "https://github.com/PointPlusYt/morgenbord-core-bundle/tree/master"
+            },
+            "time": "2022-03-07T22:09:16+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -9599,7 +9640,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "morgenbord/core-bundle": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -86,6 +86,9 @@
     "monolog/monolog": {
         "version": "2.3.5"
     },
+    "morgenbord/core-bundle": {
+        "version": "dev-master"
+    },
     "myclabs/deep-copy": {
         "version": "1.11.0"
     },
