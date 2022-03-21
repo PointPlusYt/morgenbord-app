@@ -19,6 +19,11 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+    # MorgenBord\CoreBundle\:
+    #     resource: '../vendor/morgenbord/core-bundle/src/'
+    #     exclude:
+    #         - '../vendor/morgenbord/core-bundle/src/DependencyInjection/'
+    #         - '../vendor/morgenbord/core-bundle/src/Entity/'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

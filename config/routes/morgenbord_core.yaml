@@ -1,0 +1,3 @@
+morgenbord_core:
+    resource: '@CoreBundle/Controller/'
+    type: annotation
