@@ -1,6 +1,7 @@
 {
+    "name": "morgenbord/app",
     "type": "project",
-    "license": "proprietary",
+    "license": "AGPLv3",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
