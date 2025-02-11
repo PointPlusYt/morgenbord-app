@@ -13,5 +13,4 @@ return [
     Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],
     MorgenBord\CoreBundle\CoreBundle::class => ['all' => true],
     MorgenBord\ChecklistWidgetBundle\ChecklistWidgetBundle::class => ['all' => true],
-    Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
 ];
