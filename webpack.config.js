@@ -32,6 +32,7 @@ Encore
     //.setManifestKeyPrefix('build/')
     .enableVueLoader(() => {}, {
         version: 3,
+        runtimeCompilerBuild: false,
     })
     .configureDefinePlugin((options) => {
         options.__VUE_OPTIONS_API__ = true;
