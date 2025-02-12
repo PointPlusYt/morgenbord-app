@@ -19,7 +19,7 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
-    # MorgenBord\CoreBundle\:
+    # Morgenbord\CoreBundle\:
     #     resource: '../vendor/morgenbord/core-bundle/src/'
     #     exclude:
     #         - '../vendor/morgenbord/core-bundle/src/DependencyInjection/'

@@ -1739,7 +1739,7 @@
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
-                    "MorgenBord\\ChecklistWidgetBundle\\": "src/"
+                    "Morgenbord\\ChecklistWidgetBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1752,7 +1752,7 @@
                     "email": "point@plus.yt"
                 }
             ],
-            "description": "Widget that creates checklists for MorgenBord",
+            "description": "Widget that creates checklists for Morgenbord",
             "support": {
                 "issues": "https://github.com/PointPlusYt/morgenbord-checklist-widget-bundle/issues",
                 "source": "https://github.com/PointPlusYt/morgenbord-checklist-widget-bundle/tree/main"
@@ -1780,7 +1780,7 @@
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
-                    "MorgenBord\\CoreBundle\\": "src/"
+                    "Morgenbord\\CoreBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1793,7 +1793,7 @@
                     "email": "point@plus.yt"
                 }
             ],
-            "description": "The core bundle needed to use MorgenBord and its widgets",
+            "description": "The core bundle needed to use Morgenbord and its widgets",
             "support": {
                 "issues": "https://github.com/PointPlusYt/morgenbord-core-bundle/issues",
                 "source": "https://github.com/PointPlusYt/morgenbord-core-bundle/tree/main"
