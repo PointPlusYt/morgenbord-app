@@ -25,7 +25,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 Encore
     // directory where compiled assets will be stored
-    .setOutputPath('public/build/')
+    .setOutputPath('./public/build')
     // public path used by the web server to access the output path
     .setPublicPath('/build')
     // only needed for CDN's or sub-directory deploy
@@ -38,24 +38,37 @@ Encore
         options.__VUE_OPTIONS_API__ = true;
         options.__VUE_PROD_DEVTOOLS__ = false;
     })
-    .addEntry('app', './assets/app.js')
-    .addEntry('board', './assets/board.js')
-    .addStyleEntry('tailwind', './assets/css/tailwind.css')
-    // .addStyleEntry('font-fira', './assets/fonts/fira-sans.css')
-    .addStyleEntry('fonts', './assets/fonts.js')
+    .addEntry('app', './assets/bundles/core/app.js')
+    .addEntry('board', './assets/bundles/core/board.js')
+    .addStyleEntry('tailwind', './assets/bundles/core/css/tailwind.css')
+    // .addStyleEntry('font-fira', './assets/bundles/core/fonts/fira-sans.css')
+    .addStyleEntry('fonts', './assets/bundles/core/fonts.js')
     .enablePostCssLoader((options) => {
         options.postcssOptions = {
          // directory where the postcss.config.js file is stored
-                path: './assets/postcss.config.js'
+                path: './assets/bundles/core/postcss.config.js'
         };
     })
     // .addEntries(entries)
     // .copyFiles({
-    //     from: './assets/fonts/FiraSans',
+    //     from: './assets/bundles/core/fonts/FiraSans',
     //     to: 'fonts/[name].[ext]'
     // })
-
-    // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
+    .addRule({
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: 'file-loader',
+        options: {
+            name: 'fonts/[name].[hash].[ext]',
+            publicPath: '/build'
+        }
+    })
+    .addRule({
+        test: /node_modules\/flowbite-svelte\/.*\.js$/,
+        resolve: {
+          fullySpecified: false,
+        },
+    })
+    // enables the Symfony UX Stimulus bridge (used in assets/bundles/core/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
@@ -78,9 +91,9 @@ Encore
     // enables hashed filenames (e.g. app.abc123.css)
     // .enableVersioning(Encore.isProduction())
 
-    .configureBabel((config) => {
-        config.plugins.push('@babel/plugin-proposal-class-properties');
-    })
+    // .configureBabel((config) => {
+    //     config.plugins.push('@babel/plugin-proposal-class-properties');
+    // })
 
     // enables @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
@@ -106,3 +119,15 @@ Encore
 ;
 
 module.exports = Encore.getWebpackConfig();
+
+// const config = Encore.getWebpackConfig();
+
+// config.resolve = config.resolve || {};
+// config.resolve.fallback = {
+//   fs: false,
+//   path: false,
+//   os: false,
+//   child_process: false,
+// };
+
+// module.exports = config;

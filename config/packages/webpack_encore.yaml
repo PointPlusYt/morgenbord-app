@@ -28,7 +28,7 @@ webpack_encore:
         # pass "frontend" as the 3rg arg to the Twig functions
         # {{ encore_entry_script_tags('entry1', null, 'frontend') }}
 
-        core: '%kernel.project_dir%/public/bundles/core/build'
+        core: '%kernel.project_dir%/public/bundles/core'
 
     # Cache the entrypoints.json (rebuild Symfony's cache when entrypoints.json changes)
     # Put in config/packages/prod/webpack_encore.yaml
@@ -36,7 +36,7 @@ webpack_encore:
 
 framework:
     assets:
-        json_manifest_path: '%kernel.project_dir%/public/bundles/core/build/manifest.json'
+        json_manifest_path: '%kernel.project_dir%/public/bundles/core/manifest.json'
 
 #when@prod:
 #    webpack_encore:

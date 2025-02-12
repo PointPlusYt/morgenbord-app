@@ -25,3 +25,7 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+###> morgenbord-specifics ###
+assets/bundles
+###< morgenbord-specifics ###
