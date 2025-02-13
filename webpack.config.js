@@ -45,8 +45,8 @@ Encore
     .addStyleEntry('fonts', './assets/bundles/core/fonts.js')
     .enablePostCssLoader((options) => {
         options.postcssOptions = {
-         // directory where the postcss.config.js file is stored
-                path: './assets/bundles/core/postcss.config.js'
+            // directory where the postcss.config.js file is stored
+            config: './assets/bundles/core/postcss.config.js',
         };
     })
     // .addEntries(entries)
@@ -62,12 +62,12 @@ Encore
             publicPath: '/build'
         }
     })
-    .addRule({
-        test: /node_modules\/flowbite-svelte\/.*\.js$/,
-        resolve: {
-          fullySpecified: false,
-        },
-    })
+    // .addRule({
+    //     test: /node_modules\/flowbite-svelte\/.*\.js$/,
+    //     resolve: {
+    //       fullySpecified: false,
+    //     },
+    // })
     // enables the Symfony UX Stimulus bridge (used in assets/bundles/core/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 
@@ -118,9 +118,22 @@ Encore
     //.autoProvidejQuery()
 ;
 
-module.exports = Encore.getWebpackConfig();
+// module.exports = Encore.getWebpackConfig();
 
-// const config = Encore.getWebpackConfig();
+const config = Encore.getWebpackConfig();
+
+// 🎯 Définir Webpack en mode Node.js (si nécessaire)
+config.target = 'node';
+
+// 🚀 Exclure les modules Node.js de la compilation
+config.externals = {
+    fs: 'commonjs fs',
+    path: 'commonjs path',
+    os: 'commonjs os',
+    child_process: 'commonjs child_process',
+};
+
+module.exports = config;
 
 // config.resolve = config.resolve || {};
 // config.resolve.fallback = {
